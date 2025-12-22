@@ -1,5 +1,157 @@
 @import "tailwindcss";
 
 @theme {
-  --color-primary: #AA52BE;
+  
+  --color-primary: #811B1D; 
+
+  --color-disable: #F5F5F5;
+  --color-switch-off: #ABABAB;
+
+  --color-divider: #D9D9D966;
+
+  --color-label-lightest: #B3B3B3;
+  --color-label-light: #757575;
+  --color-label: #1E1E1E;
+}
+
+/* 글자가 커지는 애니메이션 */
+@keyframes scale-up {
+  from { opacity: 0; transform: scale(0.7); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+/* 배경이 흐르는듯한 애니메이션 (배경에 적용) */
+@keyframes gradient-flow {
+  from { background-position: 0% 50%; }
+  to { background-position: 100% 50%; }
+}
+
+/* 글자가 위에서 떨어지는 애니메이션 */
+@keyframes drop {
+  from { opacity: 0; transform: translateY(-40px); }
+  40% { opacity: 1; transform: translateY(5px); }
+  to { transform: translateY(0); }
+}
+
+/* 글자가 빛나는 애니메이션 */
+@keyframes glow {
+  from { filter: drop-shadow(0 0 0px rgba(255,255,255,0.6)); }
+  50% { filter: drop-shadow(0 0 12px rgba(255,255,255,1)); }
+  to { filter: drop-shadow(0 0 0px rgba(255,255,255,0.6)); }
+}
+
+/* 페이드인(밑에서 살짝 올라옴) 애니메이션 */
+@keyframes fade-in {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes dialog-in {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes dialog-out {
+  from { opacity: 1; transform: translateY(0); }
+  to { opacity: 0; transform: translateY(10px); }
+}
+
+@keyframes bottom-sheet-in {
+  from { transform: translateY(100%)}
+  to { transform: translateY(0px)} 
+}
+
+@keyframes bottom-sheet-out {
+  from { transform: translateY(0)}
+  to { transform: translateY(100%)} 
+}
+
+/* 오른쪽에서 슬라이드 인 */
+@keyframes drawer-slide-in {
+  from { 
+    transform: translateX(100%);
+    box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+   }
+  to { 
+    transform: translateX(0);
+    box-shadow: -8px 0 24px rgba(0, 0, 0, 0.12);
+   }
+}
+
+/* 오른쪽으로 슬라이드 아웃 */
+@keyframes drawer-slide-out {
+  from { 
+    transform: translateX(0);
+    box-shadow: -8px 0 24px rgba(0, 0, 0, 0.12); 
+  }
+  to { 
+    transform: translateX(100%);
+    box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+  }
+}
+
+/* 드로어 열릴 때 배경이 왼쪽으로 밀리는 애니메이션 */
+@keyframes screen-shift-out {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-15%);
+  }
+}
+
+/* 드로어 닫힐 때 배경 복귀 */
+@keyframes screen-shift-in {
+  from {
+    transform: translateX(-15%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@layer utilities {
+  .animate-scale-up {
+    animation: scale-up 0.8s ease-out forwards;
+  }
+  .animate-drop {
+    animation: drop 2s cubic-bezier(.34,1.56,.64,1) forwards;
+  }
+  .animate-glow {
+    animation: glow 2.2s ease-in-out infinite;
+  }
+  .animate-gradient-flow {
+    background-size: 200% 200%;
+    animation: gradient-flow 2s ease-in-out infinite alternate;
+  }
+  .animate-fade-in { 
+    animation: fade-in 0.6s ease-out forwards;
+  }
+  .animate-bottom-sheet-in {
+    animation: bottom-sheet-in 0.3s ease-out forwards;
+  }
+
+  .animate-bottom-sheet-out {
+    animation: bottom-sheet-out 0.3s ease-out forwards;
+  }
+
+  .animate-dialog-in {
+    animation: dialog-in 0.3s ease-out forwards;
+  }
+  .animate-dialog-out {
+    animation: dialog-out 0.3s ease-out forwards;
+  }
+
+  .animate-drawer-in {
+    animation: drawer-slide-in 0.25s ease-out forwards;
+  }
+  .animate-drawer-out {
+    animation: drawer-slide-out 0.25s ease-in forwards;
+  }
+  .animate-screen-shift-in {
+    animation: screen-shift-in 0.25s ease-in forwards;
+  }
+  .animate-screen-shift-out {
+    animation: screen-shift-out 0.25s ease-in forwards;
+  }
 }
