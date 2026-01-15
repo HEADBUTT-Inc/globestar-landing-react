@@ -1,0 +1,114 @@
+import Breadcrumb from "../../components/Breadcrumb";
+import PageTitle from "../../components/PageTitle";
+import ClientGridRow from "./components/client-grid-row/ClientGridRow";
+import IntroduceNavBar from "./components/nav-bar/IntroduceNavBar";
+import rina from "../../../public/images/client/rina.png";
+import tuvNord from "../../../public/images/client/tuv-nord.png";
+import dnv from "../../../public/images/client/dnv.webp";
+import krRegi from "../../../public/images/client/kr-regi.svg";
+import alstom from "../../../public/images/client/alstom.svg";
+import knorr from "../../../public/images/client/knorr-bremse.jpg";
+import caf from "../../../public/images/client/caf.png";
+import rotem from "../../../public/images/client/hyundai-rotem.jpg";
+import kra from "../../../public/images/client/kra.png";
+import koreaNationalRailway from "../../../public/images/client/korea-national-railway.jpg";
+import seoulMetro from "../../../public/images/client/seoul-metro.png";
+import krri from "../../../public/images/client/krri.png";
+import samjung from "../../../public/images/client/samjung-tech.png";
+import hyundaiElevator from "../../../public/images/client/hyundai-elevator.jpg";
+import hyundaiHeavyIndustries from "../../../public/images/client/hyundai-heavy-industries.png";
+import hyundaiElectric from "../../../public/images/client/hyundai-electric.png";
+import sean from "../../../public/images/client/se-an.jpeg";
+import daeho from "../../../public/images/client/daeho-al.jpg";
+import sungsin from "../../../public/images/client/sungsin-rst.png";
+import snt from "../../../public/images/client/snt.jpg";
+import kps from "../../../public/images/client/he-kps.png";
+import dongsung from "../../../public/images/client/dongsung.jpeg";
+import sejong from "../../../public/images/client/sejong-tech.jpg";
+import kcwi from "../../../public/images/client/kcwi.jpg";
+import hyunsung from "../../../public/images/client/hyunsung.webp";
+import koino from "../../../public/images/client/koino.jpeg";
+import kosteel from "../../../public/images/client/kosteel.jpg";
+import hanyung from "../../../public/images/client/hanyung.jpg";
+import sehwa from "../../../public/images/client/sehwa.png";
+import travis from "../../../public/images/client/travis.jpg";
+import kpc from "../../../public/images/client/kpc.png";
+import ritco from "../../../public/images/client/ritco.png";
+
+export default function Clients() {
+    return <div className="w-full min-h-[calc(100vh-136px)] px-8 py-4 flex flex-col gap-4">
+        <Breadcrumb first="HOME" second="회사소개" third="고객사 리스트" />
+        <div className="w-full flex flex-col gap-4">
+            <PageTitle title="회사소개" />
+            <IntroduceNavBar />
+            <p className="text-2xl text-primary pl-30">
+                ・ 고객사 리스트
+            </p>
+            <p className="text-center">
+                <span className="bg-primary text-white">글로브스타</span>와 함께하는 국내/외 고객사 리스트입니다.<br />
+                고객과 함께 <span className="text-primary">동반성장</span>해 나가겠습니다.
+            </p>
+
+            <div className="flex flex-col gap-16 px-30 py-20">
+                <ClientGridRow clients={[
+                    { ci: rina, clientName: "리나서비스" },
+                    { ci: tuvNord, clientName: "TUV NORD" },
+                    { ci: dnv, clientName: "DNV" },
+                    { ci: krRegi, clientName: "한국선급" },
+                ]} />
+                <ClientGridRow clients={[
+                    { ci: alstom, clientName: "알스톰" },
+                    { ci: knorr, clientName: "크노르" },
+                    { ci: caf, clientName: "카프" },
+                    { ci: rotem, clientName: "현대로템" },
+                ]} />
+                <ClientGridRow clients={[
+                    { ci: kra, clientName: "한국철도협회" },
+                    { ci: koreaNationalRailway, clientName: "국가철도공단" },
+                    { ci: seoulMetro, clientName: "서울교통공사" },
+                    { ci: krri, clientName: "한국철도기술연구원" },
+                ]} />
+                <ClientGridRow clients={[
+                    { ci: samjung, clientName: "삼중테크" },
+                    { ci: hyundaiElevator, clientName: "현대엘리베이터" },
+                    { ci: hyundaiHeavyIndustries, clientName: "현대중공업" },
+                    { ci: hyundaiElectric, clientName: "현대일렉트릭앤에너지" },
+                ]} />
+                <ClientGridRow clients={[
+                    { ci: sean, clientName: "세안정기" },
+                    { ci: daeho, clientName: "대호에이엘" },
+                    { ci: sungsin, clientName: "성신 RST" },
+                    { ci: snt, clientName: "S&T" },
+                ]} />
+                <ClientGridRow clients={[
+                    { ci: kps, clientName: "한전 KPS" },
+                    { ci: dongsung, clientName: "동성진흥" },
+                    { ci: sejong, clientName: "세종기술" },
+                    { ci: kcwi, clientName: "KCWI" },
+                ]} />
+                <ClientGridRow clients={[
+                    { ci: hyunsung, clientName: "현성기업" },
+                    { ci: hyunsung, clientName: "흥진산업" },// 이미지 교체
+                    { ci: koino, clientName: "건흥전기" },
+                    { ci: koino, clientName: "대상중공업" },// 이미지 교체
+                ]} />
+                <ClientGridRow clients={[
+                    { ci: kosteel, clientName: "코스틸" },
+                    { ci: hanyung, clientName: "한영산업" },
+                    { ci: hanyung, clientName: "기득산업" }, // 이미지 교체 
+                    { ci: hanyung, clientName: "삼성콘크리트" },// 이미지 교체
+                ]} />
+                <ClientGridRow clients={[
+                    { ci: sehwa, clientName: "세화" },
+                    { ci: travis, clientName: "세한트라비스" },
+                    { ci: travis, clientName: "에코큐빅" }, // 이미지 교체 
+                    { ci: travis, clientName: "가나코퍼레이션" },// 이미지 교체
+                ]} />
+                <ClientGridRow clients={[
+                    { ci: kpc, clientName: "KPC" },
+                    { ci: ritco, clientName: "리트코" },
+                ]} />
+            </div>
+        </div>
+    </div>
+}
