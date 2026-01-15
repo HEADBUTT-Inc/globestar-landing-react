@@ -3,8 +3,6 @@ import PageTitle from "../../components/PageTitle";
 import TechNavBar from "./components/nav-bar/TechNavBar";
 
 import isaSilTitle from "../../../public/images/tech/isa-sil-title.png";
-import education from "../../../public/images/tech/rams-education.png";
-import photo from "../../../public/images/tech/rams-photo.png";
 import sil4 from "../../../public/images/tech/sil4.png";
 import sil3 from "../../../public/images/tech/sil3.png";
 

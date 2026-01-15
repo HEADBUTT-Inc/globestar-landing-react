@@ -4,7 +4,6 @@ import TechNavBar from "./components/nav-bar/TechNavBar";
 
 import tsiTitle from "../../../public/images/tech/tsi-title.png";
 import tsiPhoto1 from "../../../public/images/tech/tsi-photo1.png";
-import tsiPhoto2 from "../../../public/images/tech/tsi-photo2.png";
 
 export default function Tsi() {
     return <div className="w-full min-h-[calc(100vh-136px)] px-8 py-4 flex flex-col gap-4">

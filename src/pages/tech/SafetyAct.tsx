@@ -7,9 +7,6 @@ import safetyActTitle from "../../../public/images/tech/safety-act-title.png";
 import typeApproval1 from "../../../public/images/tech/type-approval1.png";
 import typeApproval2 from "../../../public/images/tech/type-approval2.png";
 
-import education from "../../../public/images/tech/rams-education.png";
-import photo from "../../../public/images/tech/rams-photo.png";
-
 export default function SafetyAct() {
     return <div className="w-full min-h-[calc(100vh-136px)] px-8 py-4 flex flex-col gap-4">
         <Breadcrumb first="HOME" second="철도기술" third="철도안전법승인" />

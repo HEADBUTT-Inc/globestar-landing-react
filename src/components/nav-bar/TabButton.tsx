@@ -11,7 +11,7 @@ export default function TabButton({ url, title, end = false }: Props) {
         <NavLink
             to={url}
             end={end}
-            className={({ isActive }) => `flex-1 px-4 h-12 flex items-center text-lg justify-center font-mediumtransition-colors transition-colors bg-primary text-white`}>
+            className={({ }) => `flex-1 px-4 h-12 flex items-center text-lg justify-center font-mediumtransition-colors transition-colors bg-primary text-white`}>
             {title}
         </NavLink>
     );

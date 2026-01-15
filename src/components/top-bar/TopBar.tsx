@@ -1,6 +1,5 @@
 import { useNavigate } from "react-router-dom";
 import logo from "../../../public/images/logo.png";
-import { FaSquarePhone } from "react-icons/fa6";
 
 export default function TopBar() {
 
