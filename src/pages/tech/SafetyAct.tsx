@@ -37,8 +37,8 @@ export default function SafetyAct() {
                     </div>
                 </div>
                 <div className="flex h-60 w-full justify-center px-10 gap-8">
-                    <img src={typeApproval1} className="w-[40%] h-full object-fill" />
-                    <img src={typeApproval2} className="w-[40%] h-full object-fill" />
+                    <img src={typeApproval1} className="w-[35%] h-full object-fill" />
+                    <img src={typeApproval2} className="w-[35%] h-full object-fill" />
                 </div>
                 <p className="w-full text-xl text-label font-bold px-10">
                     형식승인

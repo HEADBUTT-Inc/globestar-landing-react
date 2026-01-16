@@ -27,8 +27,8 @@ export default function Consulting() {
                     </div>
                 </div>
                 <div className="flex h-60 w-full justify-center px-10 gap-4">
-                    <img src={consultingPhoto1} className="w-[50%] h-full object-fill" />
-                    <img src={consultingPhoto2} className="w-[50%] h-full object-fill" />
+                    <img src={consultingPhoto1} className="w-[40%] h-full object-fill" />
+                    <img src={consultingPhoto2} className="w-[40%] h-full object-fill" />
                 </div>
                 <div className="w-full text-label px-20 flex flex-col gap-4 font-bold">
                     <div className="flex">
