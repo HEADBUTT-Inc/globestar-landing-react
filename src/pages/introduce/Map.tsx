@@ -1,17 +1,34 @@
 import Breadcrumb from "../../components/Breadcrumb";
 import PageTitle from "../../components/PageTitle";
+import { useDeviceStore } from "../../store/useDeviceStore";
+import { cn } from "../../utils/cn";
 import IntroduceNavBar from "./components/nav-bar/IntroduceNavBar";
 
 export default function Map() {
-    return <div className="w-full px-8 py-4 flex flex-col gap-4">
+
+    const device = useDeviceStore((s) => s.deviceType);
+    const isLaptop = device === "laptop";
+    const isTablet = device === "tablet";
+
+    return <div className={cn("w-full min-h-[calc(100vh-136px)] px-8 py-4 flex flex-col gap-4",
+        isTablet && "px-4"
+    )}>
         <Breadcrumb first="HOME" second="회사소개" third="오시는 길" />
         <div className="w-full flex flex-col gap-4">
-            <PageTitle title="회사소개" />
+            {isTablet ? <h1 className="text-label text-2xl font-black border-b-2 border-primary pb-2">
+                회사소개
+            </h1> : <PageTitle title="회사소개" />}
             <IntroduceNavBar />
-            <p className="text-2xl text-primary pl-30">
+            <p className={cn(
+                "text-2xl text-primary pl-30",
+                isLaptop && "text-xl",
+                isTablet && "text-lg pl-0"
+            )}>
                 ・ 오시는 길
             </p>
-            <div className="w-full h-[420px] px-30 ">
+            <div className={cn("w-full h-[420px] px-30",
+                isTablet && "px-4 flex justify-center h-[300px]"
+            )}>
                 <iframe
                     title="map"
                     src="https://www.google.com/maps?q=서울특별시%20마포구%20마포대로%20173&output=embed"
@@ -20,9 +37,13 @@ export default function Map() {
                     referrerPolicy="no-referrer-when-downgrade"
                 />
             </div>
-            <div className="flex flex-col gap-4 px-30">
+            <div className={cn("flex flex-col gap-4 px-30",
+                isTablet && "px-4 gap-2 text-sm"
+            )}>
                 <div className="flex">
-                    <p className="w-24 text-label">
+                    <p className={cn("min-w-24 text-label",
+                        isTablet && "min-w-16"
+                    )}>
                         주소
                     </p>
                     <p className="text-label">
@@ -30,7 +51,9 @@ export default function Map() {
                     </p>
                 </div>
                 <div className="flex">
-                    <p className="w-24 text-label">
+                    <p className={cn("min-w-24 text-label",
+                        isTablet && "min-w-16"
+                    )}>
                         연락처
                     </p>
                     <p className="text-label">
@@ -38,7 +61,9 @@ export default function Map() {
                     </p>
                 </div>
                 <div className="flex">
-                    <p className="w-24 text-label">
+                    <p className={cn("min-w-24 text-label",
+                        isTablet && "min-w-16"
+                    )}>
                         이메일
                     </p>
                     <p className="text-label">
@@ -46,7 +71,9 @@ export default function Map() {
                     </p>
                 </div>
                 <div className="flex">
-                    <p className="w-24 text-label">
+                    <p className={cn("min-w-24 text-label",
+                        isTablet && "min-w-16"
+                    )}>
                         대중교통
                     </p>
                     <p className="text-label">

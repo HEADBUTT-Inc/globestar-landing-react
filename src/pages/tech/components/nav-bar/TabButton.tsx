@@ -1,4 +1,6 @@
 import { NavLink } from "react-router-dom";
+import { useDeviceStore } from "../../../../store/useDeviceStore";
+import { cn } from "../../../../utils/cn";
 
 interface Props {
     url: string;
@@ -7,12 +9,25 @@ interface Props {
 }
 
 export default function TabButton({ url, title, end = false }: Props) {
+    const device = useDeviceStore((s) => s.deviceType);
+    const isTablet = device === "tablet";
+
     return (
         <NavLink
             to={url}
             end={end}
-            className={({ isActive }) => `flex-1 px-4 h-12 flex items-center text-lg justify-center font-mediumtransition-colors transition-colors bg-white
-             ${isActive ? "text-primary" : "text-label"}`}>
+            className={({ isActive }) =>
+                cn(
+                    // 기본 (PC/Laptop)
+                    "flex-1 px-4 h-12 flex items-center justify-center font-medium transition-colors bg-white",
+
+                    // tablet에서 3개씩
+                    isTablet && "w-1/3 flex-none text-xs",
+
+                    isActive ? "text-primary" : "text-label"
+                )
+            }
+        >
             {title}
         </NavLink>
     );

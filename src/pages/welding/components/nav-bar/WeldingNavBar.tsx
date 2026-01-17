@@ -1,6 +1,7 @@
 import TabButton from "./TabButton";
 
 export default function WeldingNavBar() {
+
     return <aside className="w-full h-14 bg-white flex items-center">
         <TabButton url="/welding/iso3834" title="ISO3834" />
         <TabButton url="/welding/en15085" title="EN15085-2" />

@@ -1,0 +1,74 @@
+import Breadcrumb from "../../../components/Breadcrumb";
+import TechNavBar from "../components/nav-bar/TechNavBar";
+
+import irisTitle from "../../../../public/images/tech/iris-title.png";
+import iris from "../../../../public/images/tech/iris.png";
+import irisPhoto1 from "../../../../public/images/tech/iris-photo1.png";
+import irisPhoto2 from "../../../../public/images/tech/iris-photo2.png";
+import irisPhoto3 from "../../../../public/images/tech/iris-photo3.png";
+
+export default function IrisMobile() {
+    return (
+        <div className="w-full px-4 py-4 flex flex-col gap-4">
+            <Breadcrumb first="HOME" second="철도기술" third="ISO/TS22163(IRIS)" />
+
+            <h1 className="text-label text-2xl font-black border-b-2 border-primary pb-2">
+                철도기술
+            </h1>
+
+            <TechNavBar />
+
+            <p className="text-lg text-primary font-semibold">
+                ・ ISO/TS22163(IRIS)
+            </p>
+
+            {/* HERO */}
+            <div className="relative">
+                <img src={irisTitle} className="w-full aspect-video object-cover" />
+
+                <div className="absolute inset-0 bg-black/50 flex items-center px-4">
+                    <p className="text-white text-sm leading-relaxed">
+                        ISO (국제표준화기구)는
+                        <br /><br />
+                        철도산업 품질경영시스템 요구사항인
+                        <br />
+                        ISO/TS22163 을 제정하여
+                        철도분야에 적용합니다.
+                    </p>
+                </div>
+            </div>
+
+            <div className="bg-primary text-white text-xs px-4 py-3 text-center">
+                "UNIFE 본사 IRIS 교육 경험과 컨설팅 노하우로
+                인증을 체계적으로 지원합니다."
+            </div>
+
+            <img src={irisPhoto1} className="w-full h-48 object-contain" />
+
+            <div className="flex flex-col gap-3 text-label text-sm">
+                <p>
+                    ISO/TS22163 은 유럽철도산업협회 (UNIFE)에서 철도산업의 필수적인 품질요구사항들을 반영하여 개발한 철도산업 사업관리시스템인 IRIS (International Railway Industry Standard)를 기반으로 국제적으로 철도산업에 적용하기 위해 ISO9001:2015 요건에 맞춘 표준입니다.
+                </p>
+
+                <p>
+                    ISO/TS22163 표준은 고도화된 품질관리, 향상된 프로세스 그리고 효율적인 제품품질을 보장하는데 목적이 있습니다. 이를 위해 제품 안전전략, 프로젝트 및 시리즈 관리, RAMS 및 LCC 와 같은 기준들이 상당히 개선된 내부감사와 이해관계자의 효과적이고 효율적인 업무수행을 보장합니다.
+                    <br />
+                    300여개의 질문으로 구성된 평가시트에 따른 고객관점의 수행레벨 평가. 거북이모형(터틀차트)도입, 일부 프로세스에 더해 Process Effectiveness Assessment Report (PEAR) 방법론을 적용합니다.
+                </p>
+
+                <p>
+                    철도산업의 철도시스템/서브시스템 제작사 및 공급사는 새로운 국제품질경영시스템 제정에 따라 ISO9001 인증을 대신하여 ISO/TS22163 인증을 받아야 합니다.
+                </p>
+
+                <p>
+                    글로브스타는 IRIS 컨설턴트로서 수십건의 IRIS 와 AS9100 (우주항공 품질경영시스템) 인증 및 컨설팅 경험으로 인증 프로세스 단계마다 인증을 위한 효율적인 지원을 약속합니다.
+                </p>
+            </div>
+
+            <div className="flex flex-col gap-4">
+                <img src={irisPhoto2} className="w-full h-40 object-fill" />
+                <img src={irisPhoto3} className="w-full h-40 object-fill" />
+            </div>
+        </div>
+    );
+}

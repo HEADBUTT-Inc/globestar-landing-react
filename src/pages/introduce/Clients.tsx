@@ -34,22 +34,46 @@ import sehwa from "../../../public/images/client/sehwa.png";
 import travis from "../../../public/images/client/travis.jpg";
 import kpc from "../../../public/images/client/kpc.png";
 import ritco from "../../../public/images/client/ritco.png";
+import { cn } from "../../utils/cn";
+import { useDeviceStore } from "../../store/useDeviceStore";
 
 export default function Clients() {
-    return <div className="w-full min-h-[calc(100vh-136px)] px-8 py-4 flex flex-col gap-4">
+    const device = useDeviceStore((s) => s.deviceType);
+    const isLaptop = device === "laptop";
+    const isTablet = device === "tablet";
+
+    return <div className={cn("w-full min-h-[calc(100vh-136px)] px-8 py-4 flex flex-col gap-4",
+        isTablet && "px-4"
+    )}>
         <Breadcrumb first="HOME" second="회사소개" third="고객사 리스트" />
+
         <div className="w-full flex flex-col gap-4">
-            <PageTitle title="회사소개" />
+            {isTablet ? <h1 className="text-label text-2xl font-black border-b-2 border-primary pb-2">
+                회사소개
+            </h1> : <PageTitle title="회사소개" />}
             <IntroduceNavBar />
-            <p className="text-2xl text-primary pl-30">
+
+            <p className={cn(
+                "text-2xl text-primary pl-30",
+                isLaptop && "text-xl",
+                isTablet && "text-lg pl-0"
+            )}>
                 ・ 고객사 리스트
             </p>
-            <p className="text-center">
+
+            <p className={cn(
+                "text-center",
+                isLaptop && "text-sm",
+                isTablet && "text-xs"
+            )}>
                 <span className="bg-primary text-white">글로브스타</span>와 함께하는 국내/외 고객사 리스트입니다.<br />
                 고객과 함께 <span className="text-primary">동반성장</span>해 나가겠습니다.
             </p>
 
-            <div className="flex flex-col gap-16 px-30 py-20">
+
+            <div className={cn("flex flex-col gap-16 px-30 py-20",
+                isTablet && "items-center px-0 py-4 gap-6"
+            )}>
                 <ClientGridRow clients={[
                     { ci: rina, clientName: "리나서비스" },
                     { ci: tuvNord, clientName: "TUV NORD" },
